@@ -11,7 +11,7 @@ public:
                 st.push(it);
             }
         }
-        while(!st.empty()){
+        while(not st.empty()){
             ans+=st.top();
             st.pop();
         }
