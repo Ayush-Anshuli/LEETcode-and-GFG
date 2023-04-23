@@ -1,10 +1,13 @@
 class Solution {
-public:
-    vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
-        vector<int>target;
-        for(int i=0;i<nums.size();i++){
-            target.insert(target.begin()+index[i],nums[i]);
+    public int[] createTargetArray(int[] nums, int[] index) {
+        ArrayList<Integer> a=new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+            a.add(index[i],nums[i]);
+        }
+        int target[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            target[i]=a.get(i);
         }
         return target;
     }
-};
+}
