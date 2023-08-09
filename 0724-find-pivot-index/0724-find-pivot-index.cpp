@@ -1,19 +1,15 @@
 class Solution {
 public:
-    int func(vector<int>& arr, int i,int j){
-        int sum=0;
-        for(int k=i;k<j;k++){
-            sum+=arr[k];
-        }
-        return sum;
-    }
     int pivotIndex(vector<int>& nums) {
+        int rightsum=accumulate(nums.begin(),nums.end(),0);
+        int left=0;
+        
         for(int i=0;i<nums.size();i++){
-            int a=func(nums,0,i);
-            int b=func(nums,i+1,nums.size());
-            if(a==b){
+            rightsum-=nums[i];
+            if(rightsum==left){
                 return i;
             }
+            left+= nums[i];
         }
         return -1;
     }
