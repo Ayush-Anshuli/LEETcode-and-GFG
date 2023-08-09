@@ -1,17 +1,18 @@
 class Solution {
 public:
-    int func(int x){
+    int binary(int n){
         int s=0;
-        int e=x;
-       long long int mid= s+(e-s)/2;
-        long long int ans=-1;
+        int e=n;
+        long long int mid=s+(e-s)/2;
+         long long int ans=-1;
         while(s<=e){
-          long long int square=mid*mid;
-            if(square==x){
+           long long  int square=mid*mid;
+            if(square==n){
                 return mid;
             }
-            else if(square<x){
+            else if(square<n){
                 ans=mid;
+                
                 s=mid+1;
             }
             else{
@@ -21,7 +22,8 @@ public:
         }
         return ans;
     }
+    
     int mySqrt(int x) {
-        return func(x);
+        return binary(x);
     }
 };
