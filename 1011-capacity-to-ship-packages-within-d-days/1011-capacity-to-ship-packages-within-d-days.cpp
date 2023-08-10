@@ -1,7 +1,7 @@
 class Solution {
-    
 public:
-    bool ispossible(vector<int>& weights, int days,int mid){
+    
+    bool possible(vector<int>& weights, int days,int mid){
         int a=1;
         int b=0;
         for(int i=0;i<weights.size();i++){
@@ -11,10 +11,10 @@ public:
             else{
                 a++;
                 b=0;
-                if(a > days || weights[i] > mid){
+                if(a>days || weights[i] > mid){
                     return false;
                 }
-                b=weights[i];
+                b = weights[i];
             }
         }
         return true;
@@ -23,15 +23,15 @@ public:
     int shipWithinDays(vector<int>& weights, int days) {
         int s=0;
         int sum=0;
-        int n=weights.size();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<weights.size();i++){
             sum+=weights[i];
         }
         int e=sum;
         int ans=0;
         int mid=s+(e-s)/2;
+        
         while(s<=e){
-            if(ispossible(weights,days,mid)){
+            if(possible(weights,days,mid)){
                 ans=mid;
                 e=mid-1;
             }
@@ -43,4 +43,3 @@ public:
         return ans;
     }
 };
-
