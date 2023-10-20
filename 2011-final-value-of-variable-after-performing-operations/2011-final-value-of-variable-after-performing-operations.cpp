@@ -1,20 +1,19 @@
 class Solution {
 public:
-    int finalValueAfterOperations(vector<string>& operations) {
+    int finalValueAfterOperations(vector<string>& oper) {
         int count=0;
-        // int sum=0;
-        for(int i=0;i<operations.size();i++){
-            if(operations[i]=="++X"){
+        for(int i=0;i<oper.size();i++){
+            if(oper[i]=="++X") {
                 count++;
             }
-            else if(operations[i]=="X++") {
-                 count++;
+            else if(oper[i]=="X++"){
+                count++;
             }
-            else if(operations[i]=="X--") {
-                 count--;
+            else if(oper[i]=="X--"){
+                count--;
             }
-            else if(operations[i]=="--X") {
-                 count--;
+            else if(oper[i]=="--X"){
+                count--;
             }
         }
         return count;
