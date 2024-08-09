@@ -1,17 +1,28 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
-        int count=0;
-        int n=nums.size();
-        
-        for(int i=1;i<n;i++){
-            if(nums[i-1]>nums[i]){
-                count++;
+        int x =0;
+        vector<int>temp;
+        for(int i = 1;i<nums.size();i++){
+            if(nums[i]<nums[i-1]){
+                x = i;
             }
         }
-        if(nums[n-1]>nums[0]){
-            count++;
+        for(int i = x; i<nums.size();i++){
+            temp.push_back(nums[i]);
         }
-        return count<=1;
+        for(int i = 0 ;i<x;i++){
+            temp.push_back(nums[i]);
+        }
+        
+        for(int i = 1; i<temp.size();i++){
+            if(temp[i]>=temp[i-1]){ 
+            }
+            else{
+                return false;
+            }
+        }
+        
+        return true;
     }
 };
