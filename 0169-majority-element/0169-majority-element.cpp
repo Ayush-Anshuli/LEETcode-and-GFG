@@ -1,7 +1,7 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-//         BRUTE FORCE TLE
+//         BRUTE FORCE -->> TLE
         // sort(nums.begin(),nums.end());
         // for(int i = 0; i<nums.size();i++){
         //     int count = 0;
@@ -13,7 +13,7 @@ public:
         // return -1;
 // HASMAP
         map<int,int>mpp;
-        for(int i = 0;i<nums.size();i++){
+        for(int i = 0; i<nums.size();i++){
             mpp[nums[i]]++;
         }
         for(auto it : mpp) {
